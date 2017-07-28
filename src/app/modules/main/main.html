@@ -1,0 +1,34 @@
+<div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container>
+            <label>Firstname</label>
+            <input ng-model="firstnameSearch">
+        </md-input-container>
+        <md-input-container>
+            <label>Surname</label>
+            <input ng-model="surnameSearch">
+        </md-input-container>
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="emailSearch">
+        </md-input-container>
+
+        <md-button ng-click="vm.search(firstnameSearch,surnameSearch,emailSearch)">Search</md-button>
+
+    </div>
+    <div layout layout-align="center center" flex>
+        <canvas id="bar" class="chart chart-bar"
+                chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series" chart-click="vm.chartClick" flex="30">
+        </canvas>
+        <canvas id="bar2" class="chart chart-bar" ng-show="vm.showMonthGraph"
+                chart-data="vm.dataMonth" chart-labels="vm.labelsMonth" chart-series="vm.series" flex="30">
+        </canvas>
+    </div>
+    <table ng-model="vm.filteredTable"></table>
+
+    <div layout="row" layout-align="center center" ng-show="vm.numPages > 1" flex>
+        <cl-paging cl-pages="vm.numPages" cl-steps="vm.numPerPage" cl-align="start start"
+                   cl-page-changed="vm.loadPages()"
+                   cl-current-page="vm.currentPage"></cl-paging>
+    </div>
+</div>

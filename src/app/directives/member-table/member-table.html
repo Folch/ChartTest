@@ -1,0 +1,34 @@
+<div>
+    <md-card layout="column" style="overflow-x: auto" ng-if="vm.ngModel.length > 0" flex>
+        <div layout layout-margin layout-padding class="light displayWebkit">
+            <div layout layout-align="center center" flex>ID</div>
+            <div layout layout-align="center center" flex>FIRSTNAME</div>
+            <div layout layout-align="center center" flex>SURNAME</div>
+            <div layout layout-align="center center" flex>EMAIL</div>
+            <div layout layout-align="center center" flex>GENDER</div>
+            <div layout layout-align="center center" flex>JOINED DATE</div>
+        </div>
+        <div layout="column" layout-margin flex>
+            <div ng-repeat="m in vm.ngModel" class="displayWebkit" layout>
+                <div layout layout-align="center center" flex>
+                    {{m.id}}
+                </div>
+                <div layout layout-align="center center" flex>
+                    {{m.firstname}}
+                </div>
+                <div layout layout-align="center center" flex>
+                    {{m.surname}}
+                </div>
+                <div layout layout-align="center center" flex>
+                    {{m.email}}
+                </div>
+                <div layout layout-align="center center" flex>
+                    {{m.gender}}
+                </div>
+                <div layout layout-align="center center" flex>
+                    {{m.joined_date}}
+                </div>
+            </div>
+        </div>
+    </md-card>
+</div>
